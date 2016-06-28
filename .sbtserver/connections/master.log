@@ -1,0 +1,34 @@
+New log file opened at Tue Jun 28 14:23:31 CEST 2016 by 7673@alteroppa.local
+Taking next connection to: 52766
+New client attempting to connect on port: 52767-52766
+  Address = /10.1.0.102:52766
+This client on port 52767 has uuid 5c53c90c-f65d-4dd4-bd4c-50c3a7803603 configName activator humanReadableName Activator protocolVersion 3 featureTags Vector()
+Connected Clients: activator-5c53c90c-f65d-4dd4-bd4c-50c3a7803603
+Taking next connection to: 52766
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 52766
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 52766
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 52766
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 52766
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 52766
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 52766
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 52766
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 52766
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 52766
