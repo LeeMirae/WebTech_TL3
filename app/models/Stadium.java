@@ -1,10 +1,7 @@
 package models;
 
 import java.util.List;
-
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 
 import com.avaje.ebean.Model;
 
@@ -15,31 +12,32 @@ public class Stadium extends Model {
 
 	//Attributes
 	
-	@Required
-	String name;
+	@Id
+	public Long stadId;
 	
 	@Required
-	String adresse;
+	public String name;
 	
 	@Required
-	int numberOfSeats;
+	public String adresse;
 	
 	@Required
-	int numberOfexits;
+	public int numberOfSeats;
 	
-	String sponsor;
+	@Required
+	public int numberOfExits;
+	
+	public String sponsor;
 	
 	
-	@OneToMany(mappedBy="stadium",cascade=CascadeType.ALL)
+	@OneToMany(mappedBy="stadium",cascade=CascadeType.REMOVE)
 	public List<Game> games;
 	
 	
-	//Methods
-	
 	//Finder
-	public static Finder<String, Stadium> find = new Finder<String, Stadium>(Stadium.class);
+	public static Finder<Long, Stadium> find = new Finder<Long,Stadium>(Stadium.class);
 	
-	//GetAll
+	//get all stadiums
 	public static List<Stadium> all() {
 		return find.all();
 	}
@@ -50,13 +48,23 @@ public class Stadium extends Model {
 	}
 	
 	//Delete
-	public void delete(String name){
-		find.ref(name).delete();
+	public static void delete(Long id){
+		find.ref(id).delete();
 	}
 	
 	//Update
-	public void update(String name){
-		find.ref(name).update();
+	public static void update(Stadium stadium){
+		stadium.update();
 	}
 	
+	//Add Game
+	 public void addGame(Game game){
+		this.games.add(game);
+		game.addStadium(this);
+	 }
+	 
+	 //Get all games
+	 public List<Game> getGames(){
+		 return this.games;
+	 }
 }
