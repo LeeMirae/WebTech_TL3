@@ -42,7 +42,7 @@ public class Stadium extends Model {
 	public String name;
 	
 	@Required
-	public String adresse;
+	public String address;
 	
 	@Required
 	public int numberOfSeats;
