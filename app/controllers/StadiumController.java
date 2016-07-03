@@ -32,8 +32,18 @@ public class StadiumController extends Controller {
 	}
 
 	public Result storeStadium(){
-		return TODO;
-		
+		Form<Stadium> stadiumForm = formFactory.form(Stadium.class);
+		Form<Stadium> filledForm = stadiumForm.bindFromRequest();
+		if (filledForm.hasErrors()){
+			return ok(views.html.stadiumForm.render("Incorrect", filledForm));
+		} else {
+			Stadium st = filledForm.get();
+			if (st.stadId == null){
+			Stadium.createStadium(st);
+		} else {
+			Stadium.update(st);
+			}
+		return redirect(routes.StadiumController.readStadiums());
+		}
 	}
-	
 }
