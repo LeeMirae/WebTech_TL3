@@ -11,25 +11,23 @@ import play.mvc.Result;
 public class StadiumController extends Controller {
 	
 	@Inject
-	FormFactory formFactory;
-	
-	private Form<Stadium> stadiumForm;
+	private FormFactory formFactory;
 	
 	
 	public Result createStadium(){
-		return TODO;
+		return ok(views.html.stadiumForm.render("Create", formFactory.form(Stadium.class)));
 		
 	}
 	
 	public Result readStadiums(){
+		return ok(views.html.stadiums.render(Stadium.all()));
+	}
+	
+	public Result updateStadium(Long stadId){
 		return TODO;
 	}
 	
-	public Result updateStadium(String name){
-		return TODO;
-	}
-	
-	public Result deleteStadium(String name){
+	public Result deleteStadium(Long stadID){
 		return TODO;
 	}
 
