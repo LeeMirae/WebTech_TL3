@@ -4,6 +4,15 @@
 
 # An example controller showing a sample home page
 GET     /                           controllers.HomeController.index
+
+
+#Stadiums
+GET		/stadiums						controllers.StadiumController.readStadiums()
+GET		/stadiums/create				controllers.StadiumController.createStadium()
+POST	/stadiums/delete/:stadId		controllers.StadiumController.deleteStadium(stadId:	Long)
+POST	/stadiums/store					controllers.StadiumController.storeStadium()
+POST	/stadiums/update/:stadId		controllers.StadiumController.updateStadium(stadId: Long)	
+
 # An example controller showing how to use dependency injection
 GET     /count                      controllers.CountController.count
 # An example controller showing how to write asynchronous code
