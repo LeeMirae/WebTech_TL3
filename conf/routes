@@ -7,11 +7,19 @@ GET     /                           controllers.HomeController.index
 
 
 #Stadiums
-GET		/stadiums						controllers.StadiumController.readStadiums()
+GET		/stadiums					controllers.StadiumController.readStadiums()
 GET		/stadiums/create				controllers.StadiumController.createStadium()
-POST	/stadiums/delete/:stadId		controllers.StadiumController.deleteStadium(stadId:	Long)
-POST	/stadiums/store					controllers.StadiumController.storeStadium()
-POST	/stadiums/update/:stadId		controllers.StadiumController.updateStadium(stadId: Long)	
+POST		/stadiums/delete/:stadId			controllers.StadiumController.deleteStadium(stadId: Long)
+POST		/stadiums/store					controllers.StadiumController.storeStadium()
+POST		/stadiums/update/:stadId			controllers.StadiumController.updateStadium(stadId: Long)	
+
+#Games
+GET		/games						controllers.GameController.games()
+POST		/games/create					controllers.GameController.createGame()
+POST		/games/:gameId/deleteGame			controllers.GameController.deleteGame(gameId: Long)
+PATCH/PUT	/games/:gameId/update				controllers.GameController.updateGame(gameId: Long)
+GET		/games/:gameId/find				controllers.GameController.findGame(gameId: Long)
+
 
 # An example controller showing how to use dependency injection
 GET     /count                      controllers.CountController.count
