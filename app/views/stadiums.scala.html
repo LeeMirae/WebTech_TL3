@@ -26,7 +26,7 @@
 			</td>
 			<td>@helper.form(action =
 				routes.StadiumController.deleteStadium(stadium.stadID)) {<input
-				type="submit" value="Delete"> }
+				type="submit" value="Delete" onclick= "return confirm('Are you sure you want to delete this stadium?')"> }
 			</td>
 		</tr>
 	}
