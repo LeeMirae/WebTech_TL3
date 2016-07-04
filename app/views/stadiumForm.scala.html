@@ -5,13 +5,13 @@
 <h1>@formType Stadium</h1>
 
 @helper.form(action = routes.StadiumController.storeStadium()){
-<input type="hidden" id="@stadiumForm("stadId").id"
-	name=“@stadiumForm("stadId").name"
-	value='@stadiumForm("stadId").value' />
+<input type="hidden" id="@stadiumForm("stadID").id"
+	name=“@stadiumForm("stadID").name"
+	value='@stadiumForm("stadID").value' />
 	@helper.inputText(stadiumForm("Name"))
 	@helper.inputText(stadiumForm("Address"))
-	@helper.inputText(stadiumForm("Number of seats"))
-	@helper.inputText(stadiumForm("Number of exits"))
+	@helper.inputText(stadiumForm("NumberOfSeats"))
+	@helper.inputText(stadiumForm("NumberOfExits"))
 	@helper.inputText(stadiumForm("Sponsor"))
 	<input type="submit" value="Save">
 	}
