@@ -24,11 +24,15 @@ public class StadiumController extends Controller {
 	}
 	
 	public Result updateStadium(Long stadID){
-		return TODO;
+		Stadium stadium = Stadium.find.byId(stadID);
+		Form<Stadium> filledForm = formFactory.form(Stadium.class).fill(stadium);
+		return ok(views.html.stadiumForm.render("Update", filledForm));
+		
 	}
 	
 	public Result deleteStadium(Long stadID){
-		return TODO;
+		Stadium.delete(stadID);
+		return redirect(routes.StadiumController.readStadiums());
 	}
 
 	public Result storeStadium(){
