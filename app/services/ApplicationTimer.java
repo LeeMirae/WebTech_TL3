@@ -45,6 +45,7 @@ public class ApplicationTimer {
         caprica.numberOfSeats = 40000;
         caprica.numberOfExits = 50;
         caprica.sponsor= "Gaius Baltar";
+        Stadium.createStadium(caprica);
         
         Stadium gemenon = new Stadium();
         gemenon.name="Gemenon";
@@ -52,12 +53,14 @@ public class ApplicationTimer {
         gemenon.numberOfSeats=30000;
         gemenon.numberOfExits=40;
         gemenon.sponsor="Simon O'Neill";
+        Stadium.createStadium(gemenon);
         
         Stadium tauron = new Stadium();
         tauron.name= "Tauron";
         tauron.address="Hypatia";
         tauron.numberOfSeats=40000;
         tauron.numberOfExits=60;
+        Stadium.createStadium(tauron);
         
    
         // When the application starts, register a stop hook with the

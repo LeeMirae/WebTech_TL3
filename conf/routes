@@ -7,7 +7,7 @@ GET     /                           controllers.HomeController.index
 
 
 #Stadiums
-GET		/stadiums					controllers.StadiumController.readStadiums()
+GET		/stadiums					   controllers.StadiumController.readStadiums()
 GET		/stadiums/create				controllers.StadiumController.createStadium()
 POST		/stadiums/delete/:stadId		controllers.StadiumController.deleteStadium(stadId: Long)
 POST		/stadiums/store					controllers.StadiumController.storeStadium()

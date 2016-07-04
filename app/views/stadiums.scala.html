@@ -5,25 +5,31 @@
 @main("Stadiums") {
 
 	<h1>List of stadiums</h1>
-	
-	<a href="@routes.StadiumController.createStadium()">Create a new Stadium</a>
 	<table>
+	<tr>
+	<td>Name</td>
+	<td>Address</td>
+	<td>Number of Seats</td>
+	<td>Number of exits</td>
+	<td>Sponsor</td>
+	</tr>
 	@for(stadium <- stadiums) {
 		<tr>
 			<td>@stadium.name</td>
 			<td>@stadium.address</td>
-			<td>@stadium.numberOfSeats</>
+			<td>@stadium.numberOfSeats</td>
 			<td>@stadium.numberOfExits</td>
 			<td>@stadium.sponsor</td>
 			<td>@helper.form(action =
-				routes.StadiumController.updateStadium(stadium.stadID)) { <input
+				routes.StadiumController.updateStadium(stadium.stadID)) {<input
 				type="submit" value="Update"> }
 			</td>
 			<td>@helper.form(action =
-				routes.StadiumController.deleteStadium(stadium.stadID)) { <input
+				routes.StadiumController.deleteStadium(stadium.stadID)) {<input
 				type="submit" value="Delete"> }
 			</td>
 		</tr>
 	}
 </table>
+<a href="@routes.StadiumController.createStadium()">Create a new Stadium</a>
 }			
