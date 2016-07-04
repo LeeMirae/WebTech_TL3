@@ -4,6 +4,8 @@ import java.time.Clock;
 import java.time.Instant;
 import java.util.concurrent.CompletableFuture;
 import javax.inject.*;
+
+import models.Stadium;
 import play.Logger;
 import play.inject.ApplicationLifecycle;
 
@@ -36,6 +38,28 @@ public class ApplicationTimer {
         start = clock.instant();
         Logger.info("ApplicationTimer demo: Starting application at " + start);
 
+        //Create 3 stadions at the first start of the application
+        Stadium caprica = new Stadium();
+        caprica.name = "Caprica";
+        caprica.address= "Caprica City";
+        caprica.numberOfSeats = 40000;
+        caprica.numberOfExits = 50;
+        caprica.sponsor= "Gaius Baltar";
+        
+        Stadium gemenon = new Stadium();
+        gemenon.name="Gemenon";
+        gemenon.address="Oranu";
+        gemenon.numberOfSeats=30000;
+        gemenon.numberOfExits=40;
+        gemenon.sponsor="Simon O'Neill";
+        
+        Stadium tauron = new Stadium();
+        tauron.name= "Tauron";
+        tauron.address="Hypatia";
+        tauron.numberOfSeats=40000;
+        tauron.numberOfExits=60;
+        
+   
         // When the application starts, register a stop hook with the
         // ApplicationLifecycle object. The code inside the stop hook will
         // be run when the application stops.
