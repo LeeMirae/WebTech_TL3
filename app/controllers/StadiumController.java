@@ -23,7 +23,7 @@ public class StadiumController extends Controller {
 		return ok(views.html.stadiums.render(Stadium.all()));
 	}
 	
-	public Result updateStadium(Long stadId){
+	public Result updateStadium(Long stadID){
 		return TODO;
 	}
 	
@@ -38,7 +38,7 @@ public class StadiumController extends Controller {
 			return ok(views.html.stadiumForm.render("Incorrect", filledForm));
 		} else {
 			Stadium st = filledForm.get();
-			if (st.stadId == null){
+			if (st.stadID == null){
 			Stadium.createStadium(st);
 		} else {
 			Stadium.update(st);
