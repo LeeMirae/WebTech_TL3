@@ -15,10 +15,11 @@ POST		/stadiums/update/:stadId			controllers.StadiumController.updateStadium(sta
 
 #Games
 GET			/games							controllers.GameController.games()
-POST		/games/create					controllers.GameController.createGame()
+GET			/games/create					controllers.GameController.createGame()
 POST		/games/:gameId/deleteGame		controllers.GameController.deleteGame(gameId: Long)
 POST		/games/:gameId/update			controllers.GameController.updateGame(gameId: Long)
-GET			/games/:gameId/find					controllers.GameController.findGame(gameId: Long)
+GET			/games/:gameId/find				controllers.GameController.findGame(gameId: Long)
+POST		/games/store					controllers.GameController.storeGame()
 
 
 # An example controller showing how to use dependency injection
