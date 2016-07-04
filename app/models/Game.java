@@ -18,16 +18,16 @@ public class Game extends Model {
 	public Long gameId;
 	
 	@Required
-	String homeTeamName;
+	public String homeTeamName;
 	
 	@Required
-	String guestTeamName;
+	public String guestTeamName;
 	
 	@Required
-	Date date;
+	public Date date;
 	
 	@ManyToOne
-	private Stadium stadium;
+	public Stadium stadium;
 	
 	
 	//Finder
@@ -45,7 +45,7 @@ public class Game extends Model {
 	}
 	
 	//Delete
-	public void delete(Long id) {
+	public static void delete(Long id) {
 		find.ref(id).delete();
 	}
 	

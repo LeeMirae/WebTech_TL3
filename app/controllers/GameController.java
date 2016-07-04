@@ -3,6 +3,7 @@ package controllers;
 import javax.inject.Inject;
 
 import models.Game;
+import models.Stadium;
 import play.data.Form;
 import play.data.FormFactory;
 import play.mvc.Controller;
@@ -10,27 +11,16 @@ import play.mvc.Result;
 
 public class GameController extends Controller {
 
-	Game game = new Game();
-
 	@Inject
-	static FormFactory formFactory;
+	private FormFactory formFactory;
 
-	private static Form<Game> gameForm;
 
-	public static Result games() {
-		gameForm = formFactory.form(Game.class);
-		return ok(views.html.games.render(Game.all(), gameForm));
+	public Result games() {
+		return ok(views.html.games.render(Game.all()));
 	}
 
 	public Result createGame() {
-		gameForm = formFactory.form(Game.class);
-		Form<Game> filledForm = gameForm.bindFromRequest();
-		if (filledForm.hasErrors()) {
-			return badRequest(views.html.games.render(Game.all(), filledForm));
-		} else {
-			Game.createGame(filledForm.get());
-			return redirect(routes.GameController.games());
-		}
+		return ok(views.html.gameForm.render("Create", formFactory.form(Game.class)));
 	}
 
 	public Result readGames() {
@@ -38,7 +28,7 @@ public class GameController extends Controller {
 	}
 
 	public Result deleteGame(Long gameId) {
-		game.delete(gameId);
+		Game.delete(gameId);
 		return redirect(routes.GameController.games());
 	}
 
@@ -47,6 +37,10 @@ public class GameController extends Controller {
 	}
 
 	public Result updateGame(Long gameId) {
+		return TODO;
+	}
+	
+	public Result storeGame(){
 		return TODO;
 	}
 
