@@ -45,8 +45,18 @@ public class Stadium extends Model {
 
 	// Constructor
 	public static void createStadium(Stadium stadium) {
+		
+		boolean NotExistent=false;
+		for (Stadium st : Stadium.all()){
+			if (st.name.equals(stadium.name)){
+				NotExistent=true;
+				break;
+			}
+			}
+		if (!NotExistent){
 		stadium.save();
-	}
+		} 
+		}
 
 	// Delete
 	public static void delete(Long id) {
