@@ -1,2 +1,26 @@
 @(games: List[Game]) 
 
+@import helper._
+
+@main("Games"){
+	<h1>List of games</h1>
+	
+	<a href="@routes.GameController.createGame()">Create a new game</a>
+	<table>
+	@for(game <- games) {
+		<tr>
+			<td>@game.homeTeamName</td>
+			<td>@game.guestTeamName</td>
+			<td>@game.date</td>
+			<td>@helper.form(action =
+				routes.GameController.updateGame(game.gameId)) { <input
+				type="submit" value="Update game"> }
+			</td>
+			<td>@helper.form(action =
+				routes.GameController.deleteGame(game.gameId)) { <input
+				type="submit" value="Delete game"> }
+			</td>
+		</tr>
+	}
+ </table>
+ }

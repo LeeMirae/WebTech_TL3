@@ -1,1 +1,17 @@
 @(formType: String, gameForm: Form[Game]) 
+
+@main(formType + " Game") {
+
+<h1>@formType Game</h1>
+
+@helper.form(action = routes.GameController.storeGame()){
+<input type="hidden" id="@gameForm("gameId").id"
+	name=“@gameForm("gameId").name"
+	value='@gameForm("gameId").value' />
+	@helper.inputText(gameForm("Home team"))
+	@helper.inputText(gameForm("Guest team"))
+	@helper.inputText(gameForm("Date"))
+	@helper.inputText(gameForm("Stadium"))
+	<input type="submit" value="Save">
+	}
+}	
